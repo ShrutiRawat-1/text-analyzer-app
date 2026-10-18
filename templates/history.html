@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% if rows %}
+  <div class="table-responsive">
+    <table class="table table-striped align-middle">
+      <thead>
+        <tr>
+          <th>Time (UTC)</th>
+          <th>Feature</th>
+          <th>Text</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1][:80] }}{% if row[1]|length > 80 %}...{% endif %}</td>
+          <td><pre class="mb-0">{{ row[2] }}</pre></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  <p>No history yet. Try one of the features first.</p>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('profile') if session.get('email') else url_for('login') }}">Text Analyzer</a>
+    {% if session.get('email') %}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('profile') }}" style="position: relative; top: 4px;">User Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('ner') }}" style="position: relative; top: 4px;">NER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('language_detection') }}" style="position: relative; top: 4px;">Language Detection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('sentiment_analysis') }}" style="position: relative; top: 4px;">Sentiment Analysis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('history') }}" style="position: relative; top: 4px;">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('logout') }}" style="position: relative; top: 4px;">Logout</a>
+        </li>
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</nav>

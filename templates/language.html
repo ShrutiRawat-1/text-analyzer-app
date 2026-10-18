@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="" method="post">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.text.label(class="form-label") }}
+    {{ form.text(class="form-control", rows=6) }}
+    {% for error in form.text.errors %}
+      <div class="text-danger small">{{ error }}</div>
+    {% endfor %}
+  </div>
+  {{ form.submit(class="btn btn-primary") }}
+</form>
+
+{% if result %}
+  <h4 class="mt-4">Language: <span class="badge bg-secondary">{{ result }}</span></h4>
+{% endif %}
+{% endblock content %}
