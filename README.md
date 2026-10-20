@@ -22,6 +22,23 @@ Registered users can do analyses on the entered text and every result is saved t
 - Gemini API (text analysis)
 - Bootstrap 5 (styling)
 
+## Screenshots
+
+**Login**
+
+![Login page](screenshots/login.png)
+
+**Profile**
+
+![Profile page](screenshots/profile.png)
+
+**Named entity recognition**
+
+![Named entity recognition](screenshots/ner.png)
+
+**History**
+
+![History page](screenshots/history.png)
 
 ## Project Structure
 
@@ -31,8 +48,9 @@ Registered users can do analyses on the entered text and every result is saved t
 ├── api.py              # Gemini API calls
 ├── db.py               # SQLite: users and history
 ├── forms.py            # Signup, login and text forms
-├── config.py           # API key and secret key 
+├── config.py           # API key and secret key (not in the repo)
 ├── requirements.txt
+├── screenshots/
 └── templates/
     ├── layout.html
     ├── navbar.html
