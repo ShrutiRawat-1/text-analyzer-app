@@ -14,10 +14,9 @@ def ask(prompt):
         return None
 
 def ner(text):
-    return ask(f'''Perform named entity recognition on the text below.
+    return ask(f'''Do named entity recognition on the text below.
 Group the entities by type. Choose the types yourself.
-Reply in plain text only. No markdown, no asterisks, no bullets, no introduction.
-Use exactly this format, with a blank line between groups:
+Use exactly this format with a blank line between groups:
 
 TYPE: entity 1, entity 2, entity 3
 
